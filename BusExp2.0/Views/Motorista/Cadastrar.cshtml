@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastrar</h2>
+
+@model BusExp2._0.Models.Motorista
+@using (Html.BeginForm())
+{
+<fieldset>
+    <legend class="form-group">Cadastrar Usuario</legend>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div id="NomeCompleto" class="form-group">
+        @Html.LabelFor(model => model.Nome, new { @class = "control-label col-sm-2" })
+        @*@Html.Label("Nome", new { @class = "control-label col-sm-2" })*@
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Nome,
+                 new
+                 {
+                     @class = "form-control",
+                     @placeholder = "Digite o nome do produto"
+                 })
+            @Html.ValidationMessageFor(model => model.Nome, null,
+                 new { @class = "text-danger" })
+            @*@Html.TextBox("txtNome", "", new { @class = "form-control", @placeholder = "Digite o nome do produto" })*@
+        </div>
+    </div>
+
+    <div id="Cpf" class="form-group">
+        @Html.LabelFor(model => model.Cpf, new { @class = "control-label col-sm-2" })
+        @*@Html.Label("Descrição", new { @class = "control-label col-sm-2" })*@
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Cpf, new { @class = "form-control", @placeholder = "Digite o CPF" })
+            @Html.ValidationMessageFor(model => model.Cpf, null,
+                 new { @class = "text-danger" })
+            @*@Html.TextBox("txtDescricao", "", new { @class = "form-control", @placeholder = "Digite a descrição do produto" })*@
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input class="btn btn-primary" type="submit"
+                       value="Cadastrar" />
+            </div>
+        </div>
+</fieldset>
+}

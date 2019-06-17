@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+          $("#datepicker").datepicker({
+              yearRange: "1945:2019",
+              dateFormat: 'mm-dd-yy',
+              changeMonth: true,
+              changeYear: true
+          });
+      } );
+    </script>
+</head>
+@model BusExp2._0.Models.Usuario
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend class="form-group">Cadastrar Usuario</legend>
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div id="NomeCompleto" class="form-group">
+            @Html.LabelFor(model => model.NomeCompleto, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Nome", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.NomeCompleto,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Digite o nome do produto"
+                    })
+                @Html.ValidationMessageFor(model => model.NomeCompleto, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtNome", "", new { @class = "form-control", @placeholder = "Digite o nome do produto" })*@
+            </div>
+        </div>
+
+        <div id="Cpf" class="form-group">
+            @Html.LabelFor(model => model.Cpf, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Descrição", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.Cpf, new { @class = "form-control", @placeholder = "Digite o CPF" })
+                @Html.ValidationMessageFor(model => model.Cpf, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtDescricao", "", new { @class = "form-control", @placeholder = "Digite a descrição do produto" })*@
+            </div>
+        </div>
+
+        <div id="Email" class="form-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Valor", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Digite o Email" })
+                @Html.ValidationMessageFor(model => model.Email, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtValor", "", new { @class = "form-control", @placeholder = "Digite o valor do produto" })*@
+            </div>
+        </div>
+
+        <div id="Rua" class="form-group">
+            @Html.LabelFor(model => model.Rua, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Quantidade", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.Rua, new { @class = "form-control", @placeholder = "Digite o endereco" })
+                @Html.ValidationMessageFor(model => model.Rua, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtQuantidade", "", new { @class = "form-control", @placeholder = "Digite a quantidade do produto" })*@
+            </div>
+        </div>
+
+        <div id="Cep" class="form-group">
+            @Html.LabelFor(model => model.Cep, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Quantidade", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.Cep, new { @class = "form-control", @placeholder = "Digite o cep" })
+                @Html.ValidationMessageFor(model => model.Cep, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtQuantidade", "", new { @class = "form-control", @placeholder = "Digite a quantidade do produto" })*@
+            </div>
+        </div>
+
+        <div id="Telefone" class="form-group">
+            @Html.LabelFor(model => model.Telefone, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Quantidade", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control", @placeholder = "Digite o Telefone" })
+                @Html.ValidationMessageFor(model => model.Telefone, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtQuantidade", "", new { @class = "form-control", @placeholder = "Digite o Telefone" })*@
+            </div>
+        </div>
+        <div id="Senha" class="form-group">
+            @Html.LabelFor(model => model.Senha, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Quantidade", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.Senha, new { @class = "form-control", @placeholder = "Digite a Senha" })
+                @Html.ValidationMessageFor(model => model.Senha, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtQuantidade", "", new { @class = "form-control", @placeholder = "Digite a Senha" })*@
+            </div>
+        </div>
+       @*<div id="DataNasc" class="form-group">*@
+           @* <p>Data: <input class="btn btn-primary" type="text" id="datepicker" /></p>*@
+        @*</div>*@
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input class="btn btn-primary" type="submit"
+                       value="Cadastrar" />
+            </div>
+        </div>
+    </fieldset>
+}

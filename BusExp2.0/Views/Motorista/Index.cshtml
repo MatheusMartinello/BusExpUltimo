@@ -1,0 +1,46 @@
+﻿@using BusExp2._0.Models
+@model BusExp2._0.Models.Motorista
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Motorista> motoristas = ViewBag.Motoristas;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ranking Motoroistas</title>
+</head>
+<body>
+    <div class="row">
+        <div id="resumoMotorista" class="col-sm-6">
+            <fieldset>
+                <legend>Resumo da compra</legend>
+                <table class="table table-hover">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Subtotal</th>
+                    </tr>
+                    @foreach (Motorista i in motoristas)
+            {
+                        <tr>
+                            <td>@i.Nome</td>
+                            <td>@i.Ran</td>
+                            <td>
+                                @{
+                                    double subtotal = i.Preco * i.Quantidade;
+                                }
+                                @subtotal.ToString("C2")
+                            </td>
+                        </tr>
+                                    }
+                </table>
+            </fieldset>
+        </div>
+</body>
+</html>
