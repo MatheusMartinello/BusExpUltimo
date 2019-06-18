@@ -1,6 +1,10 @@
-﻿@{
+﻿@using BusExp2._0.Models
+@using BusExp2._0.DAL
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Usuario usuario = ViewBag();
+    
 }
 
 <!DOCTYPE html>
@@ -12,7 +16,9 @@
 </head>
 <body>
     <div>
-    
+        <h1>Bem vindo @usuario.NomeCompleto</h1>
+        <h2>Seu saldo é de: @CreditoDAO.CreditoPorUsuario(usuario)</h2>
+        @Html.ActionLink("AdicionarCredito","Credito",null,null)    
     </div>
 </body>
 </html>

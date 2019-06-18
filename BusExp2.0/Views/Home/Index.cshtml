@@ -1,10 +1,14 @@
-﻿@model BusExp2._0.Models.Usuario
-@{
+﻿@using BusExp2._0
+@model BusExp2._0.Models.Usuario
+@{ 
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+    BusExp2._0.Models.Usuario usuario = BusExp2._0.DAL.UsuarioDAO.BuscarUsuarioPorId(BusExp2._0.Utils.Sessao.RetornarUsuario());
 }
 
+
+
+<h1>@usuario.NomeCompleto</h1>
 @using (Html.BeginForm("Login", "Usuario", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
 {
     <fieldset>

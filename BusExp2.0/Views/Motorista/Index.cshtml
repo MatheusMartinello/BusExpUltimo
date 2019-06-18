@@ -1,10 +1,10 @@
 ﻿@using BusExp2._0.Models
-@model BusExp2._0.Models.Motorista
+@model BusExp2._0.Models.Ranking
 
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<Motorista> motoristas = ViewBag.Motoristas;
+    List<Ranking> motoristas = ViewBag.Ranking();
 }
 
 
@@ -26,17 +26,11 @@
                         <th>Quantidade</th>
                         <th>Subtotal</th>
                     </tr>
-                    @foreach (Motorista i in motoristas)
+                    @foreach (Ranking i in motoristas)
             {
                         <tr>
-                            <td>@i.Nome</td>
-                            <td>@i.Ran</td>
-                            <td>
-                                @{
-                                    double subtotal = i.Preco * i.Quantidade;
-                                }
-                                @subtotal.ToString("C2")
-                            </td>
+                            <td>@i.Motorista.Nome</td>
+                            <td>@i.ValorAtribuido</td>
                         </tr>
                                     }
                 </table>

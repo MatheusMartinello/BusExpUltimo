@@ -1,5 +1,6 @@
 ﻿using BusExp2._0.DAL;
 using BusExp2._0.Models;
+using BusExp2._0.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,13 +52,14 @@ namespace BusExp2._0.Controllers
         [HttpPost]
         public ActionResult Login(Usuario usuario)
         {
-            usuario = UsuarioDAO.BuscarUsuarioPorLoginSenha(usuario);
+            usuario.Sessao = Sessao.RetornarCarrinhoId();
+
             if (usuario != null)
             {
                 //Autenticação - FormsAuthentication
                 FormsAuthentication.SetAuthCookie(usuario.Cpf, true);
                 //Sessao.Login(usuario.Email);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home",usuario);
             }
             ModelState.AddModelError("", "Login ou senha incorretos!");
             return View(usuario);
@@ -65,7 +67,7 @@ namespace BusExp2._0.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Usuario");
         }
     }
 }

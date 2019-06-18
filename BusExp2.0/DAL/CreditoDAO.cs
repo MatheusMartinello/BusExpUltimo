@@ -18,5 +18,10 @@ namespace BusExp2._0.DAL
         {
             return ctx.Creditos.ToList();
         }
+        public static Credito CreditoPorUsuario(Usuario u)
+        {
+
+            return ctx.Creditos.FirstOrDefault(x => x.usuario.Cpf.Equals(u.Cpf) && x.usuario.Senha.Equals(u.Senha));
+        }
     }
 }

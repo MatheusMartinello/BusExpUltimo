@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CreditoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MotoristaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -179,6 +180,9 @@
     <Content Include="Views\Home\Compra.cshtml" />
     <Content Include="Views\Motorista\Index.cshtml" />
     <Content Include="Views\Motorista\Cadastrar.cshtml" />
+    <Content Include="Views\Credito\Index.cshtml" />
+    <Content Include="Views\Onibus\Index.cshtml" />
+    <Content Include="Views\Ranking\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
