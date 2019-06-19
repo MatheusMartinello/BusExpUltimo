@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusExp2._0.DAL;
+using BusExp2._0.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,11 @@ namespace BusExp2._0.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            if(Sessao.RetornarUsuario() == null)
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
+            return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
         }
     }
 }

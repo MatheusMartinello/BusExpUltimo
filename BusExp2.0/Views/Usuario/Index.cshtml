@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    Usuario usuario = ViewBag();
+    
     
 }
 
@@ -15,10 +15,6 @@
     <title></title>
 </head>
 <body>
-    <div>
-        <h1>Bem vindo @usuario.NomeCompleto</h1>
-        <h2>Seu saldo é de: @CreditoDAO.CreditoPorUsuario(usuario)</h2>
-        @Html.ActionLink("AdicionarCredito","Credito",null,null)    
-    </div>
+
 </body>
 </html>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Web;
+using BusExp2._0.Utils;
 
 namespace BusExp2._0.DAL
 {
@@ -13,7 +14,7 @@ namespace BusExp2._0.DAL
 
         public static bool CadastrarUsuario(Usuario u)
         {
-            
+                
                 ctx.Usuarios.Add(u);
                 ctx.SaveChanges();
                 return true;
@@ -28,7 +29,8 @@ namespace BusExp2._0.DAL
             return (ctx.Usuarios.FirstOrDefault(x => x.Cpf.Equals(u.Cpf)));
         }
         public static Usuario BuscarUsuarioPorId(string id) {
-            return ctx.Usuarios.FirstOrDefault(x => x.Sessao.Equals(id)); ;
+            int coco = Convert.ToInt32(id);
+            return ctx.Usuarios.FirstOrDefault(x => x.UsuarioId.Equals(coco)); 
         }
         public static Usuario BuscarUsuarioPorLoginSenha(Usuario usuario)
         {

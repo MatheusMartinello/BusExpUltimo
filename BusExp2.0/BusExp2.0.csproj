@@ -148,9 +148,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906171622072_CriarBanco.cs" />
-    <Compile Include="Migrations\201906171622072_CriarBanco.Designer.cs">
-      <DependentUpon>201906171622072_CriarBanco.cs</DependentUpon>
+    <Compile Include="Migrations\201906190153482_CriarBranco.cs" />
+    <Compile Include="Migrations\201906190153482_CriarBranco.Designer.cs">
+      <DependentUpon>201906190153482_CriarBranco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
@@ -183,6 +183,7 @@
     <Content Include="Views\Credito\Index.cshtml" />
     <Content Include="Views\Onibus\Index.cshtml" />
     <Content Include="Views\Ranking\Index.cshtml" />
+    <Content Include="Views\Credito\AdicionarCredito.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -195,8 +196,8 @@
     <Folder Include="Views\Venda\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906171622072_CriarBanco.resx">
-      <DependentUpon>201906171622072_CriarBanco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906190153482_CriarBranco.resx">
+      <DependentUpon>201906190153482_CriarBranco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

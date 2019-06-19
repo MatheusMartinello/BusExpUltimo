@@ -18,17 +18,13 @@ namespace BusExp2._0.Utils
             }
             return HttpContext.Current.Session[carrinhoId].ToString();
         }
-        public static string Login(string login)
+        public static string Login(int login)
         {
             HttpContext.Current.Session[usuario] = login;
             return HttpContext.Current.Session[usuario].ToString();
         }
         public static string RetornarUsuario()
         {
-            if (HttpContext.Current.Session[usuario] == null)
-            {
-                return null;
-            }
             return HttpContext.Current.Session[usuario].ToString();
         }
 

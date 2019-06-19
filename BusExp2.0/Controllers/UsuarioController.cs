@@ -52,14 +52,15 @@ namespace BusExp2._0.Controllers
         [HttpPost]
         public ActionResult Login(Usuario usuario)
         {
-            usuario.Sessao = Sessao.RetornarCarrinhoId();
+           
 
             if (usuario != null)
             {
                 //Autenticação - FormsAuthentication
                 FormsAuthentication.SetAuthCookie(usuario.Cpf, true);
-                //Sessao.Login(usuario.Email);
-                return RedirectToAction("Index", "Home",usuario);
+                Usuario u = UsuarioDAO.BuscarUsuarioPorLoginSenha(usuario);
+                Sessao.Login(u.UsuarioId);
+                return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "Login ou senha incorretos!");
             return View(usuario);

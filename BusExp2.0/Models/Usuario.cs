@@ -19,6 +19,6 @@ namespace BusExp2._0.Models
         public string Cep { get; set; }
         public string Telefone { get; set; }
         public string Senha { get; set; }
-        public string Sessao { get; set; }
+        public string Sessao { get; internal set; }
     }
 }

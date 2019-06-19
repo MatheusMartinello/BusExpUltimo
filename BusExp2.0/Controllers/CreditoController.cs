@@ -1,5 +1,6 @@
 ﻿using BusExp2._0.DAL;
 using BusExp2._0.Models;
+using BusExp2._0.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,18 +14,23 @@ namespace BusExp2._0.Controllers
         // GET: Credito
         public ActionResult Index()
         {
-            ViewBag.Usuario = User.Identity.Name;
-            return View(UsuarioDAO.RetornarUsuarios());
+            
+            return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
         }
         public ActionResult AdicionarCredito() {
+            ViewBag.FormaPag = new SelectList(FormaPagamentoDAO.RetornarFormaPag(), "FormaPagId", "Descricao");
             return View();
         }
-       /* [HttpPost]
-        public ActionResult AdicionarCredito(int id)
+       [HttpPost]
+        public ActionResult AdicionarCredito(Credito C, int? FormaPag)
         {
-            Usuario u = UsuarioDAO.BuscarUsuario(id);
-            return RedirectToAction("Index", "Credito");
-        }*/
-
+            Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
+            C.usuario = u;
+            //C.FormaPag =  Criar metodo que busca por id
+            CreditoDAO.CadastrarCredito(C);
+            return RedirectToAction("Index", "Home");
+            
+        }
+        
     }
 }
