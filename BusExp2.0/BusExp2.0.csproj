@@ -135,6 +135,7 @@
     <Compile Include="Controllers\CreditoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MotoristaController.cs" />
+    <Compile Include="Controllers\RankingController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\CreditoDAO.cs" />
     <Compile Include="DAL\FormaPagamentoDAO.cs" />
@@ -184,6 +185,7 @@
     <Content Include="Views\Onibus\Index.cshtml" />
     <Content Include="Views\Ranking\Index.cshtml" />
     <Content Include="Views\Credito\AdicionarCredito.cshtml" />
+    <Content Include="Views\Ranking\AdionarRankig.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

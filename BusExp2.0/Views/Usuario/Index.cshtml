@@ -1,9 +1,12 @@
-﻿@using BusExp2._0.Models
+﻿
 @using BusExp2._0.DAL
+@using BusExp2._0.Models
+@using BusExp2._0.Utils
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
+    Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
+    Credito c = CreditoDAO.CreditoPorUsuario(u);
     
 }
 
@@ -15,6 +18,8 @@
     <title></title>
 </head>
 <body>
-
+    <h1>Bem vindo!</h1><br />
+    <h1>@u.NomeCompleto</h1>
+    <h2>Seu valor de credito atual:@c.ValorCredito</h2>
 </body>
 </html>

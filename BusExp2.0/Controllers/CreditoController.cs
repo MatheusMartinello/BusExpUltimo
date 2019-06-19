@@ -26,7 +26,7 @@ namespace BusExp2._0.Controllers
         {
             Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
             C.usuario = u;
-            //C.FormaPag =  Criar metodo que busca por id
+            C.FormaPag = FormaPagamentoDAO.BuscarFormaPagId(FormaPag);
             CreditoDAO.CadastrarCredito(C);
             return RedirectToAction("Index", "Home");
             
