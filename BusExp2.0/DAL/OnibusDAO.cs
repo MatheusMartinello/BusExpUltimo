@@ -21,7 +21,7 @@ namespace BusExp2._0.DAL
             return false;
         }
 
-        public static List<Onibus> RetornarMotorista()
+        public static List<Onibus> RetornarOnibus()
         {
             return ctx.Onibus.ToList();
         }

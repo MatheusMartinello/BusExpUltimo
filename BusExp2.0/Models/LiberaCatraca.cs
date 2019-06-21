@@ -17,5 +17,9 @@ namespace BusExp2._0.Models
         public Usuario usuario { get; set; }
         public DateTime DataPagamento { get; set;}
         public string ValorPago { get; set; }
+        public LiberaCatraca()
+        {
+            DataPagamento = DateTime.Now;
+        }
     }
 }

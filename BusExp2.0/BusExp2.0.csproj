@@ -137,9 +137,10 @@
     <Compile Include="Controllers\MotoristaController.cs" />
     <Compile Include="Controllers\RankingController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="DAL\CreditoDAO.cs" />
     <Compile Include="DAL\FormaPagamentoDAO.cs" />
-    <Compile Include="DAL\HistoricoGastos.cs" />
+    <Compile Include="DAL\HistoricoGastosDAO.cs" />
     <Compile Include="DAL\LiberaCatracaDAO.cs" />
     <Compile Include="DAL\MotoristaDAO.cs" />
     <Compile Include="DAL\OnibusDAO.cs" />
@@ -186,6 +187,8 @@
     <Content Include="Views\Ranking\Index.cshtml" />
     <Content Include="Views\Credito\AdicionarCredito.cshtml" />
     <Content Include="Views\Ranking\AdionarRankig.cshtml" />
+    <Content Include="Views\Venda\Index.cshtml" />
+    <Content Include="Views\Venda\Pagamento.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -195,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Venda\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906190153482_CriarBranco.resx">

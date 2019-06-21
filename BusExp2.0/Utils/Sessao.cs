@@ -25,6 +25,10 @@ namespace BusExp2._0.Utils
         }
         public static string RetornarUsuario()
         {
+            if (HttpContext.Current.Session[usuario] == null)
+            {
+                return null;
+            }
             return HttpContext.Current.Session[usuario].ToString();
         }
 
