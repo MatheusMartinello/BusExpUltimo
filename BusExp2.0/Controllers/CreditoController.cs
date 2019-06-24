@@ -6,12 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
 
 namespace BusExp2._0.Controllers
 {
     public class CreditoController : Controller
     {
         // GET: Credito
+        
         public ActionResult Index()
         {
             

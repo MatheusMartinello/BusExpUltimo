@@ -29,16 +29,31 @@
         <legend class="form-group">Cadastrar Usuario</legend>
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <div id="NomeCompleto" class="form-group">
-            @Html.LabelFor(model => model.NomeCompleto, new { @class = "control-label col-sm-2" })
+            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-sm-2" })
             @*@Html.Label("Nome", new { @class = "control-label col-sm-2" })*@
             <div class="col-sm-10">
-                @Html.TextBoxFor(model => model.NomeCompleto,
+                @Html.TextBoxFor(model => model.Nome,
                     new
                     {
                         @class = "form-control",
                         @placeholder = "Digite o nome do produto"
                     })
-                @Html.ValidationMessageFor(model => model.NomeCompleto, null,
+                @Html.ValidationMessageFor(model => model.Nome, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtNome", "", new { @class = "form-control", @placeholder = "Digite o nome do produto" })*@
+            </div>
+        </div>
+        <div id="SobreNome" class="form-group">
+            @Html.LabelFor(model => model.SobreNome, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Nome", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.SobreNome,
+                    new
+                    {
+                        @class = "form-control",
+                        @placeholder = "Digite o nome do produto"
+                    })
+                @Html.ValidationMessageFor(model => model.SobreNome, null,
                     new { @class = "text-danger" })
                 @*@Html.TextBox("txtNome", "", new { @class = "form-control", @placeholder = "Digite o nome do produto" })*@
             </div>
@@ -104,6 +119,16 @@
             <div class="col-sm-10">
                 @Html.TextBoxFor(model => model.Senha, new { @class = "form-control", @placeholder = "Digite a Senha" })
                 @Html.ValidationMessageFor(model => model.Senha, null,
+                    new { @class = "text-danger" })
+                @*@Html.TextBox("txtQuantidade", "", new { @class = "form-control", @placeholder = "Digite a Senha" })*@
+            </div>
+        </div>
+        <div id="ConfirmarSenha" class="form-group">
+            @Html.LabelFor(model => model.ConfirmacaoSenha, new { @class = "control-label col-sm-2" })
+            @*@Html.Label("Quantidade", new { @class = "control-label col-sm-2" })*@
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.ConfirmacaoSenha, new { @class = "form-control", @placeholder = "Digite a Senha" })
+                @Html.ValidationMessageFor(model => model.ConfirmacaoSenha, null,
                     new { @class = "text-danger" })
                 @*@Html.TextBox("txtQuantidade", "", new { @class = "form-control", @placeholder = "Digite a Senha" })*@
             </div>

@@ -150,7 +150,7 @@ C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\System.Web.Webpages.
 C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\System.Web.Helpers.xml
 C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\System.Web.Mvc.xml
 C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2.0.csprojResolveAssemblyReference.cache
-C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2._0.Migrations.CriarBranco.resources
-C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2.0.csproj.GenerateResource.Cache
 C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2.0.dll
 C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2.0.pdb
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2._0.Migrations.CriarBanco.resources
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2.0.csproj.GenerateResource.Cache

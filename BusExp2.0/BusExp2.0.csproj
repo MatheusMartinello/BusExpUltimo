@@ -44,11 +44,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -127,6 +127,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Script\CustomValidation.js" />
     <Content Include="Script\ScriptCalendario.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -135,6 +136,7 @@
     <Compile Include="Controllers\CreditoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MotoristaController.cs" />
+    <Compile Include="Controllers\OnibusController.cs" />
     <Compile Include="Controllers\RankingController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VendaController.cs" />
@@ -150,13 +152,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906190153482_CriarBranco.cs" />
-    <Compile Include="Migrations\201906190153482_CriarBranco.Designer.cs">
-      <DependentUpon>201906190153482_CriarBranco.cs</DependentUpon>
+    <Compile Include="Migrations\201906241155534_CriarBanco.cs" />
+    <Compile Include="Migrations\201906241155534_CriarBanco.Designer.cs">
+      <DependentUpon>201906241155534_CriarBanco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Credito.cs" />
+    <Compile Include="Models\CustomValidationCPFAttribute.cs" />
     <Compile Include="Models\FormaPagamento.cs" />
     <Compile Include="Models\HistoricoPagamentos.cs" />
     <Compile Include="Models\LiberaCatraca.cs" />
@@ -189,6 +192,10 @@
     <Content Include="Views\Ranking\AdionarRankig.cshtml" />
     <Content Include="Views\Venda\Index.cshtml" />
     <Content Include="Views\Venda\Pagamento.cshtml" />
+    <Content Include="Views\Onibus\Create.cshtml" />
+    <Content Include="Views\Onibus\Delete.cshtml" />
+    <Content Include="Views\Onibus\Details.cshtml" />
+    <Content Include="Views\Onibus\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -200,8 +207,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906190153482_CriarBranco.resx">
-      <DependentUpon>201906190153482_CriarBranco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906241155534_CriarBanco.resx">
+      <DependentUpon>201906241155534_CriarBanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

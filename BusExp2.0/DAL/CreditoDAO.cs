@@ -30,8 +30,16 @@ namespace BusExp2._0.DAL
         }
         public static Credito CreditoPorUsuario(Usuario u)
         {
+            try {
+                if (ctx.Creditos.FirstOrDefault(x => x.usuario.Cpf.Equals(u.Cpf) && x.usuario.Senha.Equals(u.Senha)) == null)
+                    return null;
+                return ctx.Creditos.FirstOrDefault(x => x.usuario.Cpf.Equals(u.Cpf) && x.usuario.Senha.Equals(u.Senha));
 
-            return ctx.Creditos.FirstOrDefault(x => x.usuario.Cpf.Equals(u.Cpf) && x.usuario.Senha.Equals(u.Senha));
+            }
+            catch
+            {
+                return null;
+            }
         }
         public static void ModificaValorCredito(Credito c)
         {

@@ -15,20 +15,25 @@ namespace BusExp2._0.Controllers
         // GET: Usuario
         public ActionResult Index()
         {
+            
             return View();
         }
         public ActionResult Cadastrar()
         {
             return View();
         }
-        public ActionResult Login() {
+        public ActionResult Login()
+        {
             return View();
+        }
+        public ActionResult CompraPassagem() {
+            return RedirectToAction("Pagamento","Venda");
         }
 
         // GET: Usuario/Create
-        public ActionResult Create()
+        public ActionResult AdicionarCredito()
         {
-            return View();
+            return RedirectToAction("AdicionarCredito","Credito");
         }
 
         // POST: Usuario/Create
@@ -36,12 +41,19 @@ namespace BusExp2._0.Controllers
         
         public ActionResult Cadastrar(Usuario u)
         {
-
+            Credito c = new Credito
+            {
+                usuario = u,
+                ValorCredito = "0",
+                FormaPag = null
+            };  
+            
             if (ModelState.IsValid)
             {
                 if (UsuarioDAO.CadastrarUsuario(u))
                 {
-                    return RedirectToAction("Index", "Usuario");
+                    CreditoDAO.CadastrarCredito(c);
+                    return RedirectToAction("Login", "Usuario");
                 }
                 ModelState.AddModelError("", "Não é possível adicionar um usuário com o mesmo login!");
                 return View(u);
@@ -52,23 +64,33 @@ namespace BusExp2._0.Controllers
         [HttpPost]
         public ActionResult Login(Usuario usuario)
         {
-           
+
 
             if (usuario != null)
             {
                 //Autenticação - FormsAuthentication
-                FormsAuthentication.SetAuthCookie(usuario.Cpf, true);
+                
                 Usuario u = UsuarioDAO.BuscarUsuarioPorLoginSenha(usuario);
-                Sessao.Login(u.UsuarioId);
-                return RedirectToAction("Index", "Home");
+                if (u != null)
+                {
+                    Sessao.Login(u.UsuarioId);
+                    FormsAuthentication.SetAuthCookie(usuario.Cpf, true);
+                    return RedirectToAction("Index", "Usuario");
+
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Login ou senha incorretos!");
+                    return View(usuario);
+                }
             }
-            ModelState.AddModelError("", "Login ou senha incorretos!");
+            ModelState.AddModelError("", "Informe Login e Senha");
             return View(usuario);
         }
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Usuario");
+            return RedirectToAction("Login", "Usuario");
         }
     }
 }
