@@ -14,7 +14,9 @@ namespace BusExp2._0.Models
         public int OnibusId { get; set; }
         public string Nome { get; set; }
         public string Cidade { get; set; }
-        public string RuaInicial { get; set; }
-        public string RuaFinal { get; set; }
+        public string LatRuaInicial { get; set; }
+        public string LonRuaInicial { get; set; }
+        public string LatRuaFinal { get; set; }
+        public string LonRuaFinal { get; set; }
     }
 }

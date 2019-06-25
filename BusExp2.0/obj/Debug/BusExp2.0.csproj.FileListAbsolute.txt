@@ -154,3 +154,12 @@ C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2.0.dll
 C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2.0.pdb
 C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2._0.Migrations.CriarBanco.resources
 C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\obj\Debug\BusExp2.0.csproj.GenerateResource.Cache
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\GMap.NET.Core.dll
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\GMap.NET.WindowsForms.dll
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\GMap.NET.WindowsPresentation.dll
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\Newtonsoft.Json.dll
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\System.Data.SQLite.dll
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\System.Data.SQLite.EF6.dll
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\System.Data.SQLite.Linq.dll
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\Newtonsoft.Json.xml
+C:\Users\martinello\Source\Repos\BusExpUltimo\BusExp2.0\bin\System.Data.SQLite.xml

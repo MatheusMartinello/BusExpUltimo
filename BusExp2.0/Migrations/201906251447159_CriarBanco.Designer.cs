@@ -6,14 +6,14 @@ namespace BusExp2._0.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
     public sealed partial class CriarBanco : IMigrationMetadata
     {
         private readonly ResourceManager Resources = new ResourceManager(typeof(CriarBanco));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906241155534_CriarBanco"; }
+            get { return "201906251447159_CriarBanco"; }
         }
         
         string IMigrationMetadata.Source
