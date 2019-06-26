@@ -228,6 +228,7 @@
     <Content Include="Views\Onibus\Edit.cshtml" />
     <Content Include="Views\Home\VerRota.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Jose.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

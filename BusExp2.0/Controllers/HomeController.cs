@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace BusExp2._0.Controllers
 {
+
     public class HomeController : Controller
     {
         // GET: Home
@@ -53,12 +54,18 @@ namespace BusExp2._0.Controllers
             EnderecoFinal.Lat = s1.results[0].geometry.location.lat.ToString();
             EnderecoFinal.Lng = s1.results[0].geometry.location.lng.ToString();
 
-            TempData["EnderecoInicial"] = s;
-            TempData["EnderecoFinal"] = s1;
+            TempData["EnderecoInicial"] = EnderecoInicial;
+            TempData["EnderecoFinal"] = EnderecoFinal;
             ViewBag.EnderecoInicial = EnderecoInicial;
             ViewBag.EnderecoFinal = EnderecoFinal;
-            return View();
+            return RedirectToAction("Jose","Home");
 
+        }
+        public ActionResult Jose()
+        {
+            ViewBag.EndIni = TempData["EnderecoInicial"];
+            ViewBag.EndFin = TempData["EnderecoFinal"];
+            return View();
         }
     }
 }
