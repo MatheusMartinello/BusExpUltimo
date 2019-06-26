@@ -187,7 +187,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\result.cs" />
+    <Compile Include="Models\LatitudeLongitude.cs" />
+    <Compile Include="Models\RootObject.cs" />
     <Compile Include="Models\Credito.cs" />
     <Compile Include="Models\CustomValidationCPFAttribute.cs" />
     <Compile Include="Models\FormaPagamento.cs" />
@@ -207,7 +208,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Home\HomeView.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Cadastrar.cshtml" />
@@ -227,6 +227,7 @@
     <Content Include="Views\Onibus\Details.cshtml" />
     <Content Include="Views\Onibus\Edit.cshtml" />
     <Content Include="Views\Home\VerRota.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

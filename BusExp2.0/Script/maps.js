@@ -1,38 +1,121 @@
-﻿var map;
-var directionsDisplay; // Instanciaremos ele mais tarde, que será o nosso google.maps.DirectionsRenderer
-var directionsService = new google.maps.DirectionsService();
+﻿//geolocationPage
 
-function initialize() {
-    directionsDisplay = new google.maps.DirectionsRenderer(); // Instanciando...
-    var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
 
-    var options = {
-        zoom: 5,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    map = new google.maps.Map(document.getElementById("mapa"), options);
-    directionsDisplay.setMap(map); // Relacionamos o directionsDisplay com o mapa desejado
+var x = document.getElementById("geoLocation");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
 }
 
-initialize();
+$(document).on('click', '#getGeolocation', function () {
+    console.log("clicked");
+    getLocation();
+});
 
-$("form").submit(function (event) {
-    event.preventDefault();
+//map page
+var y = document.getElementById("map-canvas");
+var mapLatitude;
+var mapLongitude;
+var myLatlng;
 
-    var enderecoPartida = $("#txtEnderecoPartida").val();
-    var enderecoChegada = $("#txtEnderecoChegada").val();
+function getMapLocation() {
+    console.log("getMapLocation");
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showMapPosition);
+    } else {
+        y.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showMapPosition(position) {
+    console.log("showMapPosition");
+    mapLatitude = position.coords.latitude;
+    mapLongitude = position.coords.longitude;
+    myLatlng = new google.maps.LatLng(mapLatitude, mapLongitude);
+    getMap();
+}
 
-    var request = { // Novo objeto google.maps.DirectionsRequest, contendo:
-        origin: enderecoPartida, // origem
-        destination: enderecoChegada, // destino
-        travelMode: google.maps.TravelMode.DRIVING // meio de transporte, nesse caso, de carro
+
+var map;
+function getMap() {
+    console.log("getMap");
+    var mapOptions = {
+        zoom: 12,
+        center: new google.maps.LatLng(mapLatitude, mapLongitude)
     };
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
 
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: "You are here!"
+    });
+}
+
+$(document).on("pageshow", "#mapPage", function (event) {
+    getMapLocation();
+});
+
+//directionsPage
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var directionsMap;
+var z = document.getElementById("directions-canvas");
+var start;
+var end;
+
+function getDirectionsLocation() {
+    console.log("getDirectionsLocation");
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showDirectionsPosition);
+    } else {
+        z.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showDirectionsPosition(position) {
+    console.log("showDirectionsPosition");
+    directionsLatitude = position.coords.latitude;
+    directionsLongitude = position.coords.longitude;
+    directionsLatLng = new google.maps.LatLng(directionsLatitude, directionsLongitude);
+    getDirections();
+}
+
+function getDirections() {
+    console.log('getDirections');
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    //start = new google.maps.LatLng(directionsLatLng);
+    var directionsOptions = {
+        zoom: 12,
+        center: start
+    }
+    directionsMap = new google.maps.Map(document.getElementById("directions-canvas"), directionsOptions);
+    directionsDisplay.setMap(directionsMap);
+    calcRoute();
+}
+
+function calcRoute() {
+    console.log("calcRoute");
+    start = directionsLatLng;
+    end = "50 Rue Ste-Catherine O Montréal, QC H2X 1Z6";
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: google.maps.TravelMode.TRANSIT
+    };
     directionsService.route(request, function (result, status) {
-        if (status == google.maps.DirectionsStatus.OK) { // Se deu tudo certo
-            directionsDisplay.setDirections(result); // Renderizamos no mapa o resultado
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(result);
         }
     });
+}
+
+$(document).on("pageshow", "#directionsPage", function (event) {
+    getDirectionsLocation();
 });
