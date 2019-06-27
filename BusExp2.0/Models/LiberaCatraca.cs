@@ -12,7 +12,7 @@ namespace BusExp2._0.Models
     {
         [Key]
         public int LiberaCatracaId { get; set; }
-        public Onibus onibus { get; set; }
+        public List<LatitudeLongitude> Ll { get; set; }
         public Credito credito { get; set; }
         public Usuario usuario { get; set; }
         public DateTime DataPagamento { get; set;}

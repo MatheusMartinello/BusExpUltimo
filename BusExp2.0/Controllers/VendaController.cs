@@ -29,7 +29,7 @@ namespace BusExp2._0.Controllers
             LiberaCatraca lc = new LiberaCatraca();
             lc.usuario = u;
             lc.credito = c;
-            lc.onibus = o;
+            
             lc.ValorPago = "4.20";
             LiberaCatracaDAO.CadastrarLiberaCatraca(lc);
             return RedirectToAction("Index","Usuario");

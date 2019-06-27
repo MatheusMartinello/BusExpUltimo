@@ -7,7 +7,9 @@ namespace BusExp2._0.Models
 {
     public class LatitudeLongitude
     {
+
         public string Lat { get; set; }
         public string Lng { get; set; }
+        public string end { get; set; }
     }
 }

@@ -18,12 +18,12 @@ namespace BusExp2._0.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            /* if(Sessao.RetornarUsuario() == null)
+        /*     if(Sessao.RetornarUsuario() == null)
              {
                  return RedirectToAction("Login", "Usuario");
              }
-             return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));*/
-
+             return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
+             */
 
             return View();
         }
@@ -61,11 +61,11 @@ namespace BusExp2._0.Controllers
             return RedirectToAction("Jose","Home");
 
         }
-        public ActionResult Jose()
+
+        public ActionResult xxx()
         {
-            ViewBag.EndIni = TempData["EnderecoInicial"];
-            ViewBag.EndFin = TempData["EnderecoFinal"];
             return View();
         }
+       
     }
 }
