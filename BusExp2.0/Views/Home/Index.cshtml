@@ -1,4 +1,4 @@
-﻿
+﻿@using BusExp2._0.Models
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";    
@@ -7,8 +7,9 @@
 @using BusExp2._0.Models
 @using BusExp2._0.Utils
 @{
-   Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
-    LatitudeLongitude lg = new LatitudeLongitude();
+    Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
+    LiberaCatraca lc = ViewBag.LiberaCatraca;
+
 }
 
 <style>
@@ -52,11 +53,11 @@
         <div id="floating-panel">
             <td>
                 <b>Sua localizacao: </b>
-                <input id="start" type="textbox" value="Rua 21 de abril">
+                <input id="start" type="textbox" value="@lc.RuaInicial">
             </td>
             <td>
                 <b>Seu destino: </b>
-                <input id="end" type="textbox" value="@lg">
+                <input id="end" type="textbox" value="@lc.RuaFinal">
                 <input id="submit" type="button" value="Tentando">
             </td>
         </div>
@@ -101,5 +102,6 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI5TVZ7WbLV9a55VDiQNTrpChA5h6bAYY&callback=initMap">
 </script>
 
-
-@Html.
+<div id="FinalizaViagem">
+     @*@@Html.ActionLink()*@
+</div>

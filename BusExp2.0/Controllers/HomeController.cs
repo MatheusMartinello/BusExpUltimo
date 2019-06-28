@@ -18,18 +18,18 @@ namespace BusExp2._0.Controllers
         // GET: Home
         public ActionResult Index()
         {
-        /*     if(Sessao.RetornarUsuario() == null)
-             {
-                 return RedirectToAction("Login", "Usuario");
-             }
-             return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
-             */
-
+            /*     if(Sessao.RetornarUsuario() == null)
+                 {
+                     return RedirectToAction("Login", "Usuario");
+                 }
+                 return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
+                 */
+            ViewBag.LiberaCatraca = TempData["LiberarCatraca"];
             return View();
         }
         
         
-        public ActionResult VerRota(string enderecoInicial, string enderecoFinal)
+        /*public ActionResult VerRota(string enderecoInicial, string enderecoFinal)
         {
             enderecoInicial = enderecoInicial.Replace(" ", "+");
             enderecoFinal = enderecoFinal.Replace(" ", "+");
@@ -60,7 +60,7 @@ namespace BusExp2._0.Controllers
             ViewBag.EnderecoFinal = EnderecoFinal;
             return RedirectToAction("Jose","Home");
 
-        }
+        }*/
 
         public ActionResult xxx()
         {

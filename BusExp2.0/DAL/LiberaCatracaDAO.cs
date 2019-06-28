@@ -14,6 +14,9 @@ namespace BusExp2._0.DAL
             ctx.LiberaCatracas.Add(p);
             ctx.SaveChanges();
         }
+        public static LiberaCatraca RetornaPagamentoUsuario(Usuario U) {
+            return ctx.LiberaCatracas.FirstOrDefault(x => x.usuario == U);
+        }
         public static List<LiberaCatraca> RetornaListaCatraca()
         {
             return ctx.LiberaCatracas.ToList();

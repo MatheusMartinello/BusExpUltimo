@@ -21,19 +21,23 @@ namespace BusExp2._0.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Pagamento(Onibus o)
+        public ActionResult Pagamento(LiberaCatraca l)
         {
+            LiberaCatraca lc = new LiberaCatraca();
+            HistoricoPagamentos h = new HistoricoPagamentos();
             Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
             Credito c = CreditoDAO.CreditoPorUsuario(u);
-            c.ValorCredito = Convert.ToString(Convert.ToDouble(c.ValorCredito) - 4.20);
-            LiberaCatraca lc = new LiberaCatraca();
-            lc.usuario = u;
-            lc.credito = c;
+            l.credito = c;
+            l.usuario = u;
+            l.ValorPago = "4,20";
+            LiberaCatracaDAO.CadastrarLiberaCatraca(l);
+            h.LiberaCatraca = l;
+            lc = l;
+            HistoricoGastosDAO.CadastrarLiberaCatraca(h);
+            TempData["LiberarCatraca"] = lc;
+            return RedirectToAction("Index","Home");
             
-            lc.ValorPago = "4.20";
-            LiberaCatracaDAO.CadastrarLiberaCatraca(lc);
-            return RedirectToAction("Index","Usuario");
-
-        }
+        } 
+        
     }
 }

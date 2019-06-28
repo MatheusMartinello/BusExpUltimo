@@ -185,9 +185,12 @@
     <Compile Include="Migrations\201906251447159_CriarBanco.Designer.cs">
       <DependentUpon>201906251447159_CriarBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906281236478_CriarBanco1.cs" />
+    <Compile Include="Migrations\201906281236478_CriarBanco1.Designer.cs">
+      <DependentUpon>201906281236478_CriarBanco1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\LatitudeLongitude.cs" />
     <Compile Include="Models\RootObject.cs" />
     <Compile Include="Models\Credito.cs" />
     <Compile Include="Models\CustomValidationCPFAttribute.cs" />
@@ -243,6 +246,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906251447159_CriarBanco.resx">
       <DependentUpon>201906251447159_CriarBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906281236478_CriarBanco1.resx">
+      <DependentUpon>201906281236478_CriarBanco1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
