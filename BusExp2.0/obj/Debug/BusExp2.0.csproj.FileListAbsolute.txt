@@ -225,3 +225,4 @@ C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2.0.csp
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2.0.dll
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2.0.pdb
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.CriarBanco1.resources
+C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.CriarBanco2.resources

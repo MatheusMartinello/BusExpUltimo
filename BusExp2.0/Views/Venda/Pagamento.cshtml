@@ -5,17 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
 
-</style>
-<h2>Pagamento</h2>
+
 
 @using (Html.BeginForm()) 
 { 
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>LiberaCatraca</h4>
+        <h4>Escolher Sua rota </h4>
         <hr />
         <div class="form-group">
             @Html.LabelFor(model => model.RuaInicial, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,22 +30,12 @@
                 @Html.ValidationMessageFor(model => model.RuaFinal, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-lg-7">
-                <p class="bs-component">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-                </p>
-                </div>
-            </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
+                        <input type="submit" value="Finalizar Venda" class="btn btn-default" />
                     </div>
                 </div>
             </div>
             }
 
-            <div>
-                @Html.ActionLink("Back to List", "Index")
-            </div>
+       

@@ -44,24 +44,25 @@
 <br />
 <table>
     <tr>
-        <td>
-            <b></b>
-        </td>
-        <td>Digite sua localização e seu destino</td>
-    </tr>
-    <tr>
         <div id="floating-panel">
             <td>
-                <b>Sua localizacao: </b>
-                <input id="start" type="textbox" value="@lc.RuaInicial">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm" for="inputDefault">Rua Inicial</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="start" value="@lc.RuaInicial">
+                </div>
             </td>
             <td>
-                <b>Seu destino: </b>
-                <input id="end" type="textbox" value="@lc.RuaFinal">
-                <input id="submit" type="button" value="Tentando">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm" for="inputDefault">Rua Final</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="end" value="@lc.RuaFinal">
+            </div>
+                    </td>
+            <td>
+                <button type="button" id="submit" class="btn btn-primary">Gerar Rota</button>
             </td>
         </div>
     </tr>
+  
 
 </table>
 <div id="map"></div>
@@ -103,5 +104,5 @@
 </script>
 
 <div id="FinalizaViagem">
-     @*@@Html.ActionLink()*@
+     @Html.ActionLink("Finalizar Viagem", "xxx")
 </div>

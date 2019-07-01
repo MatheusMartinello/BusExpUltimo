@@ -15,7 +15,7 @@ namespace BusExp2._0.Controllers
         // GET: Usuario
         public ActionResult Index()
         {
-            
+            ViewBag.Alerta = TempData["Alerta"];
             return View();
         }
         public ActionResult Cadastrar()
@@ -27,6 +27,11 @@ namespace BusExp2._0.Controllers
             return View();
         }
         public ActionResult CompraPassagem() {
+            if (Convert.ToDouble(CreditoDAO.CreditoPorUsuario(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario())).ValorCredito) == 0)
+            {
+                TempData["Alerta"]= "Compre primeiro creditos!!";
+                return RedirectToAction("Index", "Usuario");
+            }
             return RedirectToAction("Pagamento","Venda");
         }
 
@@ -88,7 +93,7 @@ namespace BusExp2._0.Controllers
             return View(usuario);
         }
         public ActionResult Logout()
-        {
+            {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login", "Usuario");
         }

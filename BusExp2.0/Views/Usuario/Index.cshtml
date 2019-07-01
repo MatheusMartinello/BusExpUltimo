@@ -8,24 +8,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
     Credito c = CreditoDAO.CreditoPorUsuario(u);
-    string aux = ("R$" + c.ValorCredito + ".00");
+    string aux = ("R$" + c.ValorCredito + "");
 
 
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <h1>Bem vindo!</h1><br />
-    <h1>@u.Nome</h1>
-    <h2>Seu valor de credito atual : @aux </h2>
+@if (ViewBag.Alerta != null)
+{
+    <script type="text/javascript">
+        alert('@ViewBag.Alerta');
+    </script>
+}
+<h1>Bem vindo!</h1><br />
+<h1>@u.Nome</h1>
+<h2>Seu valor de credito atual : @aux </h2>
 
-    @Html.ActionLink("Adicionar Credito", "AdicionarCredito", null,null)
-    @Html.ActionLink("Comprar Passagem", "CompraPassagem")
-</body>
-</html>
+@Html.ActionLink("Adicionar Credito", "AdicionarCredito", null,null)<b>   </b>@Html.ActionLink("Comprar Passagem", "CompraPassagem")
+
+

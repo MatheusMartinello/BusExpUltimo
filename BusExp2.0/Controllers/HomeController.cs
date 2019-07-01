@@ -64,7 +64,7 @@ namespace BusExp2._0.Controllers
 
         public ActionResult xxx()
         {
-            return View();
+            return RedirectToAction("Create", "Ranking");
         }
        
     }

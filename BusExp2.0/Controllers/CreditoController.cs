@@ -30,7 +30,7 @@ namespace BusExp2._0.Controllers
             C.usuario = u;
             C.FormaPag = FormaPagamentoDAO.BuscarFormaPagId(FormaPag);
             CreditoDAO.CadastrarCredito(C);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Usuario");
             
         }
         

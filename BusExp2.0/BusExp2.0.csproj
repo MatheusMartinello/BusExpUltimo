@@ -166,7 +166,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MotoristaController.cs" />
     <Compile Include="Controllers\OnibusController.cs" />
-    <Compile Include="Controllers\RankingController.cs" />
+    <Compile Include="Controllers\RankingsController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="DAL\CreditoDAO.cs" />
@@ -189,6 +189,10 @@
     <Compile Include="Migrations\201906281236478_CriarBanco1.Designer.cs">
       <DependentUpon>201906281236478_CriarBanco1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907011654245_CriarBanco2.cs" />
+    <Compile Include="Migrations\201907011654245_CriarBanco2.Designer.cs">
+      <DependentUpon>201907011654245_CriarBanco2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\RootObject.cs" />
@@ -210,19 +214,15 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Home\HomeView.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Cadastrar.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Home\Compra.cshtml" />
     <Content Include="Views\Motorista\Index.cshtml" />
     <Content Include="Views\Motorista\Cadastrar.cshtml" />
     <Content Include="Views\Credito\Index.cshtml" />
     <Content Include="Views\Onibus\Index.cshtml" />
-    <Content Include="Views\Ranking\Index.cshtml" />
     <Content Include="Views\Credito\AdicionarCredito.cshtml" />
-    <Content Include="Views\Ranking\AdionarRankig.cshtml" />
     <Content Include="Views\Venda\Index.cshtml" />
     <Content Include="Views\Venda\Pagamento.cshtml" />
     <Content Include="Views\Onibus\Create.cshtml" />
@@ -232,7 +232,11 @@
     <Content Include="Views\Home\VerRota.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Jose.cshtml" />
-    <Content Include="Views\Home\xxx.cshtml" />
+    <Content Include="Views\Rankings\Create.cshtml" />
+    <Content Include="Views\Rankings\Delete.cshtml" />
+    <Content Include="Views\Rankings\Details.cshtml" />
+    <Content Include="Views\Rankings\Edit.cshtml" />
+    <Content Include="Views\Rankings\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -249,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906281236478_CriarBanco1.resx">
       <DependentUpon>201906281236478_CriarBanco1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907011654245_CriarBanco2.resx">
+      <DependentUpon>201907011654245_CriarBanco2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
