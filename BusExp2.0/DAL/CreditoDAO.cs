@@ -19,7 +19,7 @@ namespace BusExp2._0.DAL
              }
             else
             {
-                ModificaValorCredito(Convert.ToDouble(p.ValorCredito));
+                ModificaValorCredito(Convert.ToDouble(p.ValorCredito),p);
                 ctx.Entry(c).State = System.Data.Entity.EntityState.Modified;
                 ctx.SaveChanges();
 
@@ -42,13 +42,16 @@ namespace BusExp2._0.DAL
                 return null;
             }
         }
-        public static void ModificaValorCredito(double puts)
+        public static void ModificaValorCredito(double puts,Credito p)
         {
+
             Credito aux = CreditoPorUsuario(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
-            double valorCredito = Convert.ToDouble(aux.ValorCredito) - puts;
-            aux.ValorCredito = Convert.ToString(valorCredito);
+            double valorCredito = Convert.ToDouble(aux.ValorCredito) + puts;
+            aux.ValorCredito = valorCredito;
             ctx.Entry(aux).State = System.Data.Entity.EntityState.Modified;
             ctx.SaveChanges();
+
+
         }
 
     }

@@ -24,13 +24,15 @@ namespace BusExp2._0.Models
         public string Cpf { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório!")]
-        [Display(Name = "Login do usuário")]
+        [Display(Name = "E-mail")]
         [EmailAddress(ErrorMessage = "E-mail inválido!")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")]
         public string Rua { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")]
         [Display(Name = "Senha do usuário")]
+        [MaxLength(20, ErrorMessage = "No máximo 20 caracteres!")]
+        [MinLength(5, ErrorMessage = "No mínimo 4 caracteres!")]
         public string Senha { get; set; }
 
         [Compare("Senha", ErrorMessage = "As senhas não coincidem!")]

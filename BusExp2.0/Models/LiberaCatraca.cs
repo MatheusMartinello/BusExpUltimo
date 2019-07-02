@@ -17,7 +17,9 @@ namespace BusExp2._0.Models
         public Usuario usuario { get; set; }
         public DateTime DataPagamento { get; set;}
         public string ValorPago { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string RuaInicial { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string RuaFinal { get; set; }
         public LiberaCatraca()
         {

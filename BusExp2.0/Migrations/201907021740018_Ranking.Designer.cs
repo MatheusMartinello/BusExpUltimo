@@ -7,13 +7,13 @@ namespace BusExp2._0.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CriarBanco1 : IMigrationMetadata
+    public sealed partial class Ranking : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CriarBanco1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Ranking));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906281236478_CriarBanco1"; }
+            get { return "201907021740018_Ranking"; }
         }
         
         string IMigrationMetadata.Source

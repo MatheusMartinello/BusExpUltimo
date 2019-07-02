@@ -53,12 +53,9 @@ namespace BusExp2._0.Controllers
 
             ranking.Motorista = MotoristaDAO.RetornarMotorista()[1];
             ranking.Usuario = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
-            if (ModelState.IsValid)
-            {
-                db.Rankings.Add(ranking);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            if(RankingDAO.CadastrarRanking(ranking))
+                 return RedirectToAction("Index", "Rankings");
+            
 
             return View(ranking);
         }
@@ -120,13 +117,6 @@ namespace BusExp2._0.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+
     }
 }

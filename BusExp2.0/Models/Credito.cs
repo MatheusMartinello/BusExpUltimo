@@ -14,6 +14,11 @@ namespace BusExp2._0.Models
         public int CreditoId { get; set; }
         public Usuario usuario { get; set; }
         public FormaPagamento FormaPag { get; set; }
-        public string ValorCredito { get; set; }
+        public double ValorCredito { get; set; }
+        public DateTime DataAdicao { get; set; }
+        public Credito() {
+            DataAdicao = DateTime.Now;
+            ValorCredito = 0;
+            }
     }
 }

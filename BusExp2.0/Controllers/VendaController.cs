@@ -31,7 +31,7 @@ namespace BusExp2._0.Controllers
             l.usuario = u;
             l.ValorPago = "4,20";
             
-            CreditoDAO.ModificaValorCredito(Convert.ToDouble(l.ValorPago));
+            CreditoDAO.ModificaValorCredito(-Convert.ToDouble(l.ValorPago),l.credito);
             LiberaCatracaDAO.CadastrarLiberaCatraca(l);
             h.LiberaCatraca = l;
             lc = l;

@@ -8,6 +8,7 @@ namespace BusExp2._0.Models
 {
     public class Context : DbContext 
     {
+
         public Context() : base("BusExp2._0.Models") { }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Onibus> Onibus { get; set; }

@@ -9,10 +9,12 @@ namespace BusExp2._0.DAL
     public class RankingDAO
     {
         private static Context ctx = SingletonContext.GetInstance();
-        public static void CadastrarRanking(Ranking p)
+        public static bool CadastrarRanking(Ranking u)
         {
-            ctx.Rankings.Add(p);
-            ctx.SaveChanges();    
+                ctx.Rankings.Add(u);
+                ctx.SaveChanges();
+                return true;
+           
         }
         public static List<Ranking> RetornaListaRankingPorMotorista(int? id)
         {

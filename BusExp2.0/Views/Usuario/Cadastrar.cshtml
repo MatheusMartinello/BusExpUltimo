@@ -117,7 +117,7 @@
             @Html.LabelFor(model => model.Senha, new { @class = "control-label col-sm-2" })
             @*@Html.Label("Quantidade", new { @class = "control-label col-sm-2" })*@
             <div class="col-sm-10">
-                @Html.TextBoxFor(model => model.Senha, new { @class = "form-control", @placeholder = "Digite a Senha" })
+                @Html.PasswordFor(model => model.Senha, new { @class = "form-control", @placeholder = "Digite a Senha" })
                 @Html.ValidationMessageFor(model => model.Senha, null,
                     new { @class = "text-danger" })
                 @*@Html.TextBox("txtQuantidade", "", new { @class = "form-control", @placeholder = "Digite a Senha" })*@
@@ -127,7 +127,7 @@
             @Html.LabelFor(model => model.ConfirmacaoSenha, new { @class = "control-label col-sm-2" })
             @*@Html.Label("Quantidade", new { @class = "control-label col-sm-2" })*@
             <div class="col-sm-10">
-                @Html.TextBoxFor(model => model.ConfirmacaoSenha, new { @class = "form-control", @placeholder = "Digite a Senha" })
+                @Html.PasswordFor(model => model.ConfirmacaoSenha, new { @class = "form-control", @placeholder = "Digite a Senha" })
                 @Html.ValidationMessageFor(model => model.ConfirmacaoSenha, null,
                     new { @class = "text-danger" })
                 @*@Html.TextBox("txtQuantidade", "", new { @class = "form-control", @placeholder = "Digite a Senha" })*@

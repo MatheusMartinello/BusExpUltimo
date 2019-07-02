@@ -14,7 +14,7 @@ namespace BusExp2._0.Models
         public int RankingId { get; set; }
         public Motorista Motorista { get; set; }
         public Usuario Usuario { get; set; }
-        public string ValorAtribuido { get; set; }
+        public string ValorAtribuido { get; set; }        
         public string Comentario { get; set; }
     }
 }

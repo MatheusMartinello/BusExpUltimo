@@ -96,8 +96,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -112,6 +112,11 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.111.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -121,6 +126,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -158,10 +171,13 @@
     <Content Include="Script\CustomValidation.js" />
     <Content Include="Script\maps.js" />
     <Content Include="Script\ScriptCalendario.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CreditoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MotoristaController.cs" />
@@ -181,17 +197,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906251447159_CriarBanco.cs" />
-    <Compile Include="Migrations\201906251447159_CriarBanco.Designer.cs">
-      <DependentUpon>201906251447159_CriarBanco.cs</DependentUpon>
+    <Compile Include="Migrations\201907021731565_Pqp.cs" />
+    <Compile Include="Migrations\201907021731565_Pqp.Designer.cs">
+      <DependentUpon>201907021731565_Pqp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906281236478_CriarBanco1.cs" />
-    <Compile Include="Migrations\201906281236478_CriarBanco1.Designer.cs">
-      <DependentUpon>201906281236478_CriarBanco1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907011654245_CriarBanco2.cs" />
-    <Compile Include="Migrations\201907011654245_CriarBanco2.Designer.cs">
-      <DependentUpon>201907011654245_CriarBanco2.cs</DependentUpon>
+    <Compile Include="Migrations\201907021740018_Ranking.cs" />
+    <Compile Include="Migrations\201907021740018_Ranking.Designer.cs">
+      <DependentUpon>201907021740018_Ranking.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
@@ -209,7 +221,9 @@
     <Compile Include="Utils\Sessao.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -246,16 +260,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Ranking\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906251447159_CriarBanco.resx">
-      <DependentUpon>201906251447159_CriarBanco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907021731565_Pqp.resx">
+      <DependentUpon>201907021731565_Pqp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906281236478_CriarBanco1.resx">
-      <DependentUpon>201906281236478_CriarBanco1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907011654245_CriarBanco2.resx">
-      <DependentUpon>201907011654245_CriarBanco2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907021740018_Ranking.resx">
+      <DependentUpon>201907021740018_Ranking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

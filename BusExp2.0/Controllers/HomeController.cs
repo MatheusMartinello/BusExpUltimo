@@ -27,8 +27,8 @@ namespace BusExp2._0.Controllers
             ViewBag.LiberaCatraca = TempData["LiberarCatraca"];
             return View();
         }
-        
-        
+
+
         /*public ActionResult VerRota(string enderecoInicial, string enderecoFinal)
         {
             enderecoInicial = enderecoInicial.Replace(" ", "+");
@@ -53,19 +53,17 @@ namespace BusExp2._0.Controllers
             EnderecoInicial.Lng = s.results[0].geometry.location.lng.ToString();
             EnderecoFinal.Lat = s1.results[0].geometry.location.lat.ToString();
             EnderecoFinal.Lng = s1.results[0].geometry.location.lng.ToString();
-
             TempData["EnderecoInicial"] = EnderecoInicial;
             TempData["EnderecoFinal"] = EnderecoFinal;
             ViewBag.EnderecoInicial = EnderecoInicial;
             ViewBag.EnderecoFinal = EnderecoFinal;
             return RedirectToAction("Jose","Home");
-
         }*/
 
         public ActionResult xxx()
         {
-            return RedirectToAction("Create", "Ranking");
+            return RedirectToAction("Create", "Rankings");
         }
-       
+
     }
 }

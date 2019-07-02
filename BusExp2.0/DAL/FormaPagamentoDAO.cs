@@ -26,7 +26,7 @@ namespace BusExp2._0.DAL
             return ctx.FormasPagamento.ToList();
         }
         public static FormaPagamento BuscarFormaPagId(int? f) {
-            return ctx.FormasPagamento.Find(f);
+            return ctx.FormasPagamento.FirstOrDefault(x => x.FormaPagId == f);
         }
         public static FormaPagamento BuscarFormaPag(FormaPagamento u)
         {

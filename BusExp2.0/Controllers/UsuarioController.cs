@@ -27,9 +27,9 @@ namespace BusExp2._0.Controllers
             return View();
         }
         public ActionResult CompraPassagem() {
-            if (Convert.ToDouble(CreditoDAO.CreditoPorUsuario(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario())).ValorCredito) == 0)
+            if (CreditoDAO.CreditoPorUsuario(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario())).ValorCredito == 0 || CreditoDAO.CreditoPorUsuario(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario())).ValorCredito < 4.20)
             {
-                TempData["Alerta"]= "Compre primeiro creditos!!";
+                TempData["Alerta"]= "Recarregue seus creditos creditos!!";
                 return RedirectToAction("Index", "Usuario");
             }
             return RedirectToAction("Pagamento","Venda");
@@ -46,17 +46,18 @@ namespace BusExp2._0.Controllers
         
         public ActionResult Cadastrar(Usuario u)
         {
-            Credito c = new Credito
-            {
-                usuario = u,
-                ValorCredito = "0",
-                FormaPag = null
-            };  
+             
             
             if (ModelState.IsValid)
             {
                 if (UsuarioDAO.CadastrarUsuario(u))
                 {
+                    Credito c = new Credito
+                    {
+                        usuario = u,
+                        ValorCredito = 0,
+                        FormaPag = null
+                    };
                     CreditoDAO.CadastrarCredito(c);
                     return RedirectToAction("Login", "Usuario");
                 }
