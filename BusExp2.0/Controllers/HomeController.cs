@@ -18,12 +18,12 @@ namespace BusExp2._0.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            /*     if(Sessao.RetornarUsuario() == null)
+                 if(Sessao.RetornarUsuario() == null)
                  {
                      return RedirectToAction("Login", "Usuario");
                  }
-                 return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
-                 */
+                 
+    
             ViewBag.LiberaCatraca = TempData["LiberarCatraca"];
             return View();
         }

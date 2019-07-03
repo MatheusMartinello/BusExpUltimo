@@ -11,15 +11,15 @@ namespace BusExp2._0.DAL
         private static Context ctx = SingletonContext.GetInstance();
         public static void CadastrarLiberaCatraca(LiberaCatraca p)
         {
-            ctx.LiberaCatracas.Add(p);
+            ctx.Credito.Add(p);
             ctx.SaveChanges();
         }
         public static LiberaCatraca RetornaPagamentoUsuario(Usuario U) {
-            return ctx.LiberaCatracas.FirstOrDefault(x => x.usuario == U);
+            return ctx.Credito.FirstOrDefault(x => x.usuario == U);
         }
         public static List<LiberaCatraca> RetornaListaCatraca()
         {
-            return ctx.LiberaCatracas.ToList();
+            return ctx.Credito.ToList();
         }
     }
 }

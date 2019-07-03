@@ -19,27 +19,24 @@ namespace BusExp2._0.Controllers
         // GET: Rankings
         public ActionResult Index()
         {
+            if (Sessao.RetornarUsuario() == null)
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
+           
             return View(db.Rankings.ToList());
         }
 
-        // GET: Rankings/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ranking ranking = db.Rankings.Find(id);
-            if (ranking == null)
-            {
-                return HttpNotFound();
-            }
-            return View(ranking);
-        }
+
 
         // GET: Rankings/Create
         public ActionResult Create()
         {
+            if (Sessao.RetornarUsuario() == null)
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
+            
             return View();
         }
 
@@ -54,26 +51,13 @@ namespace BusExp2._0.Controllers
             ranking.Motorista = MotoristaDAO.RetornarMotorista()[1];
             ranking.Usuario = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
             if(RankingDAO.CadastrarRanking(ranking))
-                 return RedirectToAction("Index", "Rankings");
+                 return RedirectToAction("Index", "Usuario");
             
 
             return View(ranking);
         }
 
-        // GET: Rankings/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ranking ranking = db.Rankings.Find(id);
-            if (ranking == null)
-            {
-                return HttpNotFound();
-            }
-            return View(ranking);
-        }
+
 
         // POST: Rankings/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -89,32 +73,6 @@ namespace BusExp2._0.Controllers
                 return RedirectToAction("Index");
             }
             return View(ranking);
-        }
-
-        // GET: Rankings/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ranking ranking = db.Rankings.Find(id);
-            if (ranking == null)
-            {
-                return HttpNotFound();
-            }
-            return View(ranking);
-        }
-
-        // POST: Rankings/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Ranking ranking = db.Rankings.Find(id);
-            db.Rankings.Remove(ranking);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
 

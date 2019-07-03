@@ -56,11 +56,11 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Ranking</h4>
+        <h4>Avaliação</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            <h1>Pure CSS Star Rating Widget</h1>
+            <h1>Deixe sua avaliação</h1>
             <fieldset class="rating">
                 <input type="radio" id="star5" name="ValorAtribuido" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
                 <input type="radio" id="star4half" name="ValorAtribuido" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
@@ -75,22 +75,18 @@
             </fieldset>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Comentario, htmlAttributes: new { @class = "control-label col-md-2" })
+        <br />
+        <br />
+        
             <div class="form-group">
                 <label for="exampleTextarea">Deixe seu comentario</label>
                 <textarea class="form-control" id="exampleTextarea" rows="3" name="Comentario"></textarea>
             </div>
-        </div>
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Avalie!" class="btn btn-info" />
             </div>
         </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

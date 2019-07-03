@@ -37,8 +37,14 @@ namespace BusExp2._0.Models
 
         [Compare("Senha", ErrorMessage = "As senhas não coincidem!")]
         [NotMapped]
+
         public string ConfirmacaoSenha { get; set; }
+        [MaxLength(8, ErrorMessage = "No máximo 20 caracteres!")]
+        [MinLength(8, ErrorMessage = "No mínimo 4 caracteres!")]
         public string Cep { get; set; }
+        [MaxLength(10, ErrorMessage = "No máximo 20 caracteres!")]
+        [MinLength(9, ErrorMessage = "No mínimo 4 caracteres!")]
+        [Display(Name = "Telefone com DDD")]
         public string Telefone { get; set; }
     }
 }

@@ -231,3 +231,5 @@ C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\bin\System.Web.Http.Web
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Pqp.resources
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2.0.csproj.GenerateResource.Cache
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Ranking.resources
+C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Algumas_Alteracoes.resources
+C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.AchoQue.resources

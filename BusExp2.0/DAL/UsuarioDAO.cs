@@ -39,5 +39,9 @@ namespace BusExp2._0.DAL
         {
             return ctx.Usuarios.FirstOrDefault(x => x.Cpf.Equals(usuario.Cpf) && x.Senha.Equals(usuario.Senha));
         }
+        public static Usuario BuscarUsuario2(int id)
+        {
+            return ctx.Usuarios.FirstOrDefault(x => x.UsuarioId == id);
+        }
     }
 }

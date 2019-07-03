@@ -20,7 +20,7 @@ namespace BusExp2._0.DAL
         {
             return ctx.Rankings.Include("Motorista").Where(x =>x.Motorista.MotoristaId == id).ToList();
         }
-        public static List<Ranking> RetornaListaRanking()
+        public static IEnumerable<Ranking> RetornaListaRanking()
         {
             return ctx.Rankings.ToList();
         }

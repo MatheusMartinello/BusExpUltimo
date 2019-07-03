@@ -17,6 +17,7 @@ namespace BusExp2._0.Models
         public DbSet<HistoricoPagamentos> HistoricoPagamentos { get; set; }
         public DbSet<Ranking> Rankings { get; set; }
         public DbSet<FormaPagamento> FormasPagamento { get; set; }
-        public DbSet<LiberaCatraca> LiberaCatracas { get; set; }
+        public DbSet<LiberaCatraca> Credito { get; set; }
+        public DbSet<HistoricoAdicaoCredito> HistoricoAdicaoCreditos { get; set; }
     }
 }
