@@ -14,9 +14,9 @@ namespace BusExp2._0.Controllers
     {
 
 
-        [Route("RankingMotorista")]
+        [Route("RankingMotorista/{id}")]
         [HttpGet]
-        public List<Ranking> RankingMotorista()
+        public List<Ranking> RankingMotorista(int id)
         {
             return RankingDAO.RetornaListaRanking();
 

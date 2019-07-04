@@ -26,7 +26,8 @@ namespace BusExp2._0.Controllers
                 Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
                 if(u.Perfil.Equals("Administrador"))
                     return View(db.Rankings.ToList());
-               
+                else
+                    return RedirectToAction("Index","Usuario");
             }
             return RedirectToAction("Login", "Usuario");
 
@@ -77,9 +78,10 @@ namespace BusExp2._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Rankings.Add(ranking);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                ranking.Motorista = MotoristaDAO.MotoristaAleatorio();
+                ranking.Usuario = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
+                if (RankingDAO.CadastrarRanking(ranking))
+                    return RedirectToAction("Index", "Usuario");
             }
 
             return View(ranking);

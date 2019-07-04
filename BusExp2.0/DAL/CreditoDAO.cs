@@ -44,10 +44,11 @@ namespace BusExp2._0.DAL
         }
         public static void ModificaValorCredito(double puts,Credito p)
         {
-
+            FormaPagamento k = ctx.FormasPagamento.ToList()[0];
             Credito aux = CreditoPorUsuario(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
             double valorCredito = Convert.ToDouble(aux.ValorCredito) + puts;
             aux.ValorCredito = valorCredito;
+            aux.FormaPag = k;
             ctx.Entry(aux).State = System.Data.Entity.EntityState.Modified;
             ctx.SaveChanges();
 
