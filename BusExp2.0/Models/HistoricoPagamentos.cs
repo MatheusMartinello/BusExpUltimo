@@ -14,4 +14,4 @@ namespace BusExp2._0.Models
         public int HistoricoPagamentosId { get; set; }
         public LiberaCatraca LiberaCatraca { get; set; }
     }
-}
+}//

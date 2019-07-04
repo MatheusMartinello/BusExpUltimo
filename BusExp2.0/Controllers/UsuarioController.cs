@@ -45,7 +45,7 @@ namespace BusExp2._0.Controllers
         {
             return RedirectToAction("AdicionarCredito","Credito");
         }
-
+        //
         // POST: Usuario/Create
         [HttpPost]
         
@@ -57,6 +57,7 @@ namespace BusExp2._0.Controllers
             if (ModelState.IsValid)
             {
                 u.Cpf = apenasDigitos.Replace(u.Cpf, "");
+                u.Perfil = "Usuario";
                 if (UsuarioDAO.CadastrarUsuario(u))
                 {
                      return RedirectToAction("Login", "Usuario");
@@ -97,6 +98,14 @@ namespace BusExp2._0.Controllers
             {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login", "Usuario");
+        }
+        public ActionResult GoToRanking()
+        {
+            return RedirectToAction("Index", "Rankings");
+        }
+        public ActionResult GoToMotoristas()
+        {
+            return RedirectToAction("Create", "Motoristas");
         }
     }
 }

@@ -35,7 +35,7 @@ namespace BusExp2._0.Controllers
             return LiberaCatracaDAO.Cu2(id);
         }
 
-        
+        //
     }
 }
 

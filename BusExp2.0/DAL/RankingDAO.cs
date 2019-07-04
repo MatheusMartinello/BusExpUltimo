@@ -17,7 +17,7 @@ namespace BusExp2._0.DAL
            
         }
         public static List<Ranking> RetornaListaRankingPorMotorista(int? id)
-        {
+        {//
             return ctx.Rankings.Include("Motorista").Where(x =>x.Motorista.MotoristaId == id).ToList();
         }
         public static List<Ranking> RetornaListaRanking()

@@ -22,4 +22,4 @@ namespace BusExp2._0.Models
             ValorCredito = 0;
             }
     }
-}
+}//

@@ -13,7 +13,7 @@ namespace BusExp2._0.DAL
         {
             ctx.Credito.Add(p);
             ctx.SaveChanges();
-        }
+        }//
         public static LiberaCatraca RetornaPagamentoUsuario(Usuario U) {
             return ctx.Credito.FirstOrDefault(x => x.usuario == U);
         }

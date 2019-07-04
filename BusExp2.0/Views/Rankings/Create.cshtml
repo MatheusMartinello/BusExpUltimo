@@ -6,55 +6,66 @@
 }
 <script src="http//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"></script>
 <style>
-   
+    fieldset, label {
+        margin: 0;
+        padding: 0;
+    }
 
-    fieldset, label { margin: 0; padding: 0; }
-    body{ margin: 20px; }
-    h1 { font-size: 1.5em; margin: 10px; }
+    body {
+        margin: 20px;
+    }
 
+    h1 {
+        font-size: 1.5em;
+        margin: 10px;
+    }
     /****** Style Star Rating Widget *****/
-
-    .rating { 
-      border: none;
-      float: left;
+    .rating {
+        border: none;
+        float: left;
     }
 
-    .rating > input { display: none; } 
-    .rating > label:before { 
-      margin: 5px;
-      font-size: 1.25em;
-      font-family: FontAwesome;
-      display: inline-block;
-      content: "\f005";
-    }
+        .rating > input {
+            display: none;
+        }
 
-    .rating > .half:before { 
-      content: "\f089";
-      position: absolute;
-    }
+        .rating > label:before {
+            margin: 5px;
+            font-size: 1.25em;
+            font-family: FontAwesome;
+            display: inline-block;
+            content: "\f005";
+        }
 
-    .rating > label { 
-      color: #ddd; 
-     float: right; 
-    }
+        .rating > .half:before {
+            content: "\f089";
+            position: absolute;
+        }
 
-    /***** CSS Magic to Highlight Stars on Hover *****/
-
-    .rating > input:checked ~ label, /* show gold star when clicked */
-    .rating:not(:checked) > label:hover, /* hover current star */
-    .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
-
-    .rating > input:checked + label:hover, /* hover current star when changing rating */
-    .rating > input:checked ~ label:hover,
-    .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-    .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+        .rating > label {
+            color: #ddd;
+            float: right;
+        }
+        /***** CSS Magic to Highlight Stars on Hover *****/
+        .rating > input:checked ~ label, /* show gold star when clicked */
+        .rating:not(:checked) > label:hover, /* hover current star */
+        .rating:not(:checked) > label:hover ~ label {
+            color: #FFD700;
+        }
+            /* hover previous stars in list */
+            .rating > input:checked + label:hover, /* hover current star when changing rating */
+            .rating > input:checked ~ label:hover,
+            .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+            .rating > input:checked ~ label:hover ~ label {
+                color: #FFED85;
+            }
 </style>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Avaliação</h4>
         <hr />
@@ -73,20 +84,20 @@
                 <input type="radio" id="star1" name="ValorAtribuido" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
                 <input type="radio" id="starhalf" name="ValorAtribuido" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
             </fieldset>
-            </div>
         </div>
+    </div>
         <br />
         <br />
-        
-            <div class="form-group">
-                <label for="exampleTextarea">Deixe seu comentario</label>
-                <textarea class="form-control" id="exampleTextarea" rows="3" name="Comentario"></textarea>
-            </div>
-        
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Avalie!" class="btn btn-info" />
-            </div>
+            <label for="exampleTextarea">Deixe seu comentario</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3" name="Comentario"></textarea>
         </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Avalie!" class="btn btn-info" />
+                </div>
+            </div>
 }

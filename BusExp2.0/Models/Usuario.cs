@@ -12,7 +12,7 @@ namespace BusExp2._0.Models
 {
     [Table("Usuario")]
     public class Usuario
-    {
+    {//
         [Key]
         public int UsuarioId { get; set; }
         [Display(Name = "Nome do usuário")]
@@ -46,5 +46,8 @@ namespace BusExp2._0.Models
         [MinLength(9, ErrorMessage = "No mínimo 4 caracteres!")]
         [Display(Name = "Telefone com DDD")]
         public string Telefone { get; set; }
+
+
+        public string Perfil { get; set; }
     }
 }

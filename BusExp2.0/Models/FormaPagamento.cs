@@ -15,4 +15,4 @@ namespace BusExp2._0.Models
         public string Tipo { get; set; }
         public string Descricao { get; set; }
     }
-}
+}//

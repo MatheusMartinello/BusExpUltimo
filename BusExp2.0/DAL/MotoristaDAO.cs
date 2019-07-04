@@ -16,7 +16,7 @@ namespace BusExp2._0.DAL
                 ctx.Motoristas.Add(u);
                 ctx.SaveChanges();
                 return true;
-            
+            //
         }
 
         public static List<Motorista> RetornarMotorista()

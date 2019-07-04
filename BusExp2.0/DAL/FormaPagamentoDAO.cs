@@ -7,7 +7,7 @@ using System.Web;
 namespace BusExp2._0.DAL
 {
     public class FormaPagamentoDAO
-    {
+    {//
         private static Context ctx = SingletonContext.GetInstance();
 
         public static bool CadastrarFormaPag(FormaPagamento u)

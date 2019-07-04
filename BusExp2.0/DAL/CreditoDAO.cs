@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 namespace BusExp2._0.DAL
-{
+{//
     public class CreditoDAO
     {
         private static Context ctx = SingletonContext.GetInstance();

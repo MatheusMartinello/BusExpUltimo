@@ -8,7 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Mvc;//
 
 namespace BusExp2._0.Controllers
 {
@@ -16,10 +16,12 @@ namespace BusExp2._0.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        
         public ActionResult Index()
         {
-                 if(Sessao.RetornarUsuario() == null)
+              if(Sessao.RetornarUsuario() == null)
                  {
+                    
                      return RedirectToAction("Login", "Usuario");
                  }
                  
@@ -59,7 +61,7 @@ namespace BusExp2._0.Controllers
             ViewBag.EnderecoFinal = EnderecoFinal;
             return RedirectToAction("Jose","Home");
         }*/
-
+        
         public ActionResult xxx()
         {
             return RedirectToAction("Create", "Rankings");

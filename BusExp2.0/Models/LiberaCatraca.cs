@@ -23,7 +23,7 @@ namespace BusExp2._0.Models
         public string RuaFinal { get; set; }
         public LiberaCatraca()
         {
-            DataPagamento = DateTime.Now;
+            DataPagamento = DateTime.Now;//
         }
     }
 }

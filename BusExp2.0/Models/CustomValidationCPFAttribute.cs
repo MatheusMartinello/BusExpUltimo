@@ -11,7 +11,7 @@ namespace BusExp2._0.Models
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
-    namespace ProjetoIESB.Models
+    namespace ProjetoIESB.Models//
     {
         /// <summary>
         /// Validação customizada para CPF

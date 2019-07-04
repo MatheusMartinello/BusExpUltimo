@@ -19,4 +19,4 @@ namespace BusExp2._0.Models
         public string LatRuaFinal { get; set; }
         public string LonRuaFinal { get; set; }
     }
-}
+}//

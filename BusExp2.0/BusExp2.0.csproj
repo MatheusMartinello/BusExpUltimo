@@ -180,8 +180,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CreditoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MotoristaController.cs" />
-    <Compile Include="Controllers\OnibusController.cs" />
+    <Compile Include="Controllers\MotoristasController.cs" />
     <Compile Include="Controllers\RankingAPIController.cs" />
     <Compile Include="Controllers\RankingsController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -197,33 +196,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907021731565_Pqp.cs" />
-    <Compile Include="Migrations\201907021731565_Pqp.Designer.cs">
-      <DependentUpon>201907021731565_Pqp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907021740018_Ranking.cs" />
-    <Compile Include="Migrations\201907021740018_Ranking.Designer.cs">
-      <DependentUpon>201907021740018_Ranking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907031256533_Algumas_Alteracoes.cs" />
-    <Compile Include="Migrations\201907031256533_Algumas_Alteracoes.Designer.cs">
-      <DependentUpon>201907031256533_Algumas_Alteracoes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907031741451_AchoQue.cs" />
-    <Compile Include="Migrations\201907031741451_AchoQue.Designer.cs">
-      <DependentUpon>201907031741451_AchoQue.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907032101371_Banco.cs" />
-    <Compile Include="Migrations\201907032101371_Banco.Designer.cs">
-      <DependentUpon>201907032101371_Banco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907040009376_Att_iiii.cs" />
-    <Compile Include="Migrations\201907040009376_Att_iiii.Designer.cs">
-      <DependentUpon>201907040009376_Att_iiii.cs</DependentUpon>
+    <Compile Include="Migrations\201907041201317_Outro.cs" />
+    <Compile Include="Migrations\201907041201317_Outro.Designer.cs">
+      <DependentUpon>201907041201317_Outro.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\HistoricoAdicaoCredito.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RootObject.cs" />
     <Compile Include="Models\Credito.cs" />
     <Compile Include="Models\CustomValidationCPFAttribute.cs" />
@@ -249,15 +229,22 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Cadastrar.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Motorista\Index.cshtml" />
-    <Content Include="Views\Motorista\Cadastrar.cshtml" />
     <Content Include="Views\Credito\Index.cshtml" />
     <Content Include="Views\Credito\AdicionarCredito.cshtml" />
     <Content Include="Views\Venda\Index.cshtml" />
     <Content Include="Views\Venda\Pagamento.cshtml" />
     <Content Include="Views\Home\VerRota.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Motoristas\Create.cshtml" />
+    <Content Include="Views\Motoristas\Delete.cshtml" />
+    <Content Include="Views\Motoristas\Details.cshtml" />
+    <Content Include="Views\Motoristas\Edit.cshtml" />
+    <Content Include="Views\Motoristas\Index.cshtml" />
     <Content Include="Views\Rankings\Create.cshtml" />
+    <Content Include="Views\Rankings\Delete.cshtml" />
+    <Content Include="Views\Rankings\Details.cshtml" />
+    <Content Include="Views\Rankings\Edit.cshtml" />
+    <Content Include="Views\Rankings\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -267,25 +254,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Motorista\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907021731565_Pqp.resx">
-      <DependentUpon>201907021731565_Pqp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907021740018_Ranking.resx">
-      <DependentUpon>201907021740018_Ranking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907031256533_Algumas_Alteracoes.resx">
-      <DependentUpon>201907031256533_Algumas_Alteracoes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907031741451_AchoQue.resx">
-      <DependentUpon>201907031741451_AchoQue.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907032101371_Banco.resx">
-      <DependentUpon>201907032101371_Banco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907040009376_Att_iiii.resx">
-      <DependentUpon>201907040009376_Att_iiii.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907041201317_Outro.resx">
+      <DependentUpon>201907041201317_Outro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,4 +15,4 @@ namespace BusExp2._0.Models
         public string Nome { get; set; }
         public string Cpf { get; set; }
     }
-}
+}//

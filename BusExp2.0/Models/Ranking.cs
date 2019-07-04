@@ -20,4 +20,4 @@ namespace BusExp2._0.Models
         
         public string Comentario { get; set; }
     }
-}
+}//

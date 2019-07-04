@@ -16,7 +16,7 @@ namespace BusExp2._0.DAL
         {
             if (BuscarUsuario(u) == null)
             {
-                ctx.Usuarios.Add(u);
+                ctx.Usuarios.Add(u);//
                 ctx.SaveChanges();
                 return true;
             }

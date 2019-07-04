@@ -228,11 +228,6 @@ C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\bin\System.Web.Http.Web
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\bin\System.Net.Http.Formatting.xml
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\bin\System.Web.Http.xml
 C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\bin\System.Web.Http.WebHost.xml
-C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Pqp.resources
-C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2.0.csproj.GenerateResource.Cache
-C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Ranking.resources
-C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Algumas_Alteracoes.resources
-C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.AchoQue.resources
 C:\Users\Aluno\Documents\BusExpUltimo-master\BusExp2.0\bin\ApplicationInsights.config
 C:\Users\Aluno\Documents\BusExpUltimo-master\BusExp2.0\bin\roslyn\csc.exe
 C:\Users\Aluno\Documents\BusExpUltimo-master\BusExp2.0\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -305,3 +300,5 @@ C:\Users\Aluno\Documents\BusExpUltimo-master\BusExp2.0\obj\Debug\BusExp2.0.dll
 C:\Users\Aluno\Documents\BusExpUltimo-master\BusExp2.0\obj\Debug\BusExp2.0.pdb
 C:\Users\Aluno\Documents\BusExpUltimo-master\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Banco.resources
 C:\Users\Aluno\Documents\BusExpUltimo-master\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Att_iiii.resources
+C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2._0.Migrations.Outro.resources
+C:\Users\martinello\Source\Repos\BusExpUltimo2\BusExp2.0\obj\Debug\BusExp2.0.csproj.GenerateResource.Cache

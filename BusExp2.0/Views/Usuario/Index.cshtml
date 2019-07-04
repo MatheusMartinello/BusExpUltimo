@@ -35,4 +35,11 @@
 
 @Html.ActionLink("Adicionar Credito", "AdicionarCredito", null,null)<b>   </b>@Html.ActionLink("Comprar Passagem", "CompraPassagem")
 
+<br />
+@if (u.Perfil.Equals("Administrador"))
+{
+    @Html.ActionLink("Ver Ranking", "GoToRanking",null,null)
+    @Html.ActionLink("Cadastrar Motorista", "GoToMotoristas", null, null)
+}
+
 

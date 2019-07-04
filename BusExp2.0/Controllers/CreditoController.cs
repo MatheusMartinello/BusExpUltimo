@@ -9,16 +9,16 @@ using System.Web.Mvc;
 using System.Globalization;
 
 namespace BusExp2._0.Controllers
-{
+{//
     public class CreditoController : Controller
     {
         // GET: Credito
         
         public ActionResult Index()
         {
-            
             return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario()));
         }
+        
         public ActionResult AdicionarCredito() {
             ViewBag.FormaPag = new SelectList(FormaPagamentoDAO.RetornarFormaPag(), "FormaPagId", "Descricao");
             return View();
