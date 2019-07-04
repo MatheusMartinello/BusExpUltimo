@@ -14,10 +14,18 @@ namespace BusExp2._0.Controllers
         // GET: Venda
         public ActionResult Index()
         {
+            if (Sessao.RetornarUsuario() == null)
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
             return View();
         }
         public ActionResult Pagamento()
         {
+            if (Sessao.RetornarUsuario() == null)
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
             return View();
         }
         [HttpPost]
@@ -35,7 +43,7 @@ namespace BusExp2._0.Controllers
             LiberaCatracaDAO.CadastrarLiberaCatraca(l);
             h.LiberaCatraca = l;
             lc = l;
-            HistoricoGastosDAO.CadastrarLiberaCatraca(h);
+            //HistoricoGastosDAO.CadastrarLiberaCatraca(h);
             TempData["LiberarCatraca"] = lc;
             return RedirectToAction("Index","Home");
             

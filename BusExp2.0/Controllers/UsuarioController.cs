@@ -16,6 +16,10 @@ namespace BusExp2._0.Controllers
         // GET: Usuario
         public ActionResult Index()
         {
+            if (Sessao.RetornarUsuario() == null)
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
             ViewBag.Alerta = TempData["Alerta"];
             return View();
         }
@@ -49,19 +53,13 @@ namespace BusExp2._0.Controllers
         {
 
             var apenasDigitos = new Regex(@"[^\d]");
-            u.Cpf = apenasDigitos.Replace(u.Cpf, "");
+            
             if (ModelState.IsValid)
             {
+                u.Cpf = apenasDigitos.Replace(u.Cpf, "");
                 if (UsuarioDAO.CadastrarUsuario(u))
                 {
-                    Credito c = new Credito
-                    {
-                        usuario = u,
-                        ValorCredito = 0,
-                        FormaPag = null
-                    };
-                    CreditoDAO.CadastrarCredito(c);
-                    return RedirectToAction("Login", "Usuario");
+                     return RedirectToAction("Login", "Usuario");
                 }
                 ModelState.AddModelError("", "Não é possível adicionar um usuário com o mesmo login!");
                 return View(u);

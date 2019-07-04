@@ -21,5 +21,9 @@ namespace BusExp2._0.DAL
         {
             return ctx.Credito.ToList();
         }
+        public static List<LiberaCatraca> Cu2(int id)
+        {
+            return ctx.Credito.Include("Credito").Include("Usuario").Where(x => x.credito.usuario.UsuarioId == id && x.usuario.UsuarioId == id).ToList();
+        }
     }
 }

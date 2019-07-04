@@ -27,10 +27,15 @@ namespace BusExp2._0.Controllers
         public ActionResult AdicionarCredito(Credito C, int? FormaPag)
         {
             Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
+            if(C.ValorCredito < 0 || C.ValorCredito > 200)
+            {
+                TempData["Alerta"] = "Valor Ultrapassa do limite !";
+                return RedirectToAction("Index", "Usuario");
+            }
             C.usuario = u;
             C.FormaPag = FormaPagamentoDAO.BuscarFormaPagId(FormaPag);
             CreditoDAO.CadastrarCredito(C);
-            HistoricoAdicaoCreditoDAO.CadastrarLiberaCatraca(C);
+            //HistoricoAdicaoCreditoDAO.CadastrarLiberaCatraca(C);
             return RedirectToAction("Index", "Usuario");
             
         }

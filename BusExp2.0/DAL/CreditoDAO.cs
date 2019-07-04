@@ -53,6 +53,15 @@ namespace BusExp2._0.DAL
 
 
         }
+        public static List<Credito> Cu (int id)
+        {
+            Usuario u = UsuarioDAO.BuscarUsuario2(id);
+            if(u != null)
+            {
+                return ctx.Creditos.Include("Usuario").Where(x => x.usuario.UsuarioId == id).ToList();
+            } 
+            return null;
+        }
 
     }
 }

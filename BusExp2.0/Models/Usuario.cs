@@ -39,10 +39,10 @@ namespace BusExp2._0.Models
         [NotMapped]
 
         public string ConfirmacaoSenha { get; set; }
-        [MaxLength(8, ErrorMessage = "No máximo 20 caracteres!")]
-        [MinLength(8, ErrorMessage = "No mínimo 4 caracteres!")]
+        [MaxLength(8, ErrorMessage = "No máximo 8 caracteres!")]
+        [MinLength(8, ErrorMessage = "No mínimo 8 caracteres!")]
         public string Cep { get; set; }
-        [MaxLength(10, ErrorMessage = "No máximo 20 caracteres!")]
+        [MaxLength(11, ErrorMessage = "No máximo 11 caracteres!")]
         [MinLength(9, ErrorMessage = "No mínimo 4 caracteres!")]
         [Display(Name = "Telefone com DDD")]
         public string Telefone { get; set; }

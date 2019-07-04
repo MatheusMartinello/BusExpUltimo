@@ -13,6 +13,7 @@ namespace BusExp2._0.Models
         [Key]
         public int CreditoId { get; set; }
         public Usuario usuario { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public FormaPagamento FormaPag { get; set; }
         public double ValorCredito { get; set; }
         public DateTime DataAdicao { get; set; }

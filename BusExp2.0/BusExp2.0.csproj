@@ -213,6 +213,14 @@
     <Compile Include="Migrations\201907031741451_AchoQue.Designer.cs">
       <DependentUpon>201907031741451_AchoQue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907032101371_Banco.cs" />
+    <Compile Include="Migrations\201907032101371_Banco.Designer.cs">
+      <DependentUpon>201907032101371_Banco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907040009376_Att_iiii.cs" />
+    <Compile Include="Migrations\201907040009376_Att_iiii.Designer.cs">
+      <DependentUpon>201907040009376_Att_iiii.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\HistoricoAdicaoCredito.cs" />
@@ -272,6 +280,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907031741451_AchoQue.resx">
       <DependentUpon>201907031741451_AchoQue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907032101371_Banco.resx">
+      <DependentUpon>201907032101371_Banco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907040009376_Att_iiii.resx">
+      <DependentUpon>201907040009376_Att_iiii.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

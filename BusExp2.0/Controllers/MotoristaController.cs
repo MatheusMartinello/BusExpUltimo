@@ -1,5 +1,6 @@
 ﻿using BusExp2._0.DAL;
 using BusExp2._0.Models;
+using BusExp2._0.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,17 @@ namespace BusExp2._0.Controllers
         // GET: Motorista
         public ActionResult Index()
         {
+            if (Sessao.RetornarUsuario() == null)
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
             return View();
         }
         public ActionResult Cadastrar() {
+            if (Sessao.RetornarUsuario() == null)
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
             return View();
         }
         [HttpPost]
@@ -27,7 +36,7 @@ namespace BusExp2._0.Controllers
             {
                 if (MotoristaDAO.CadastrarMotorista(M))
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Usuario");
                 }
                 ModelState.AddModelError("", "Não é possível adicionar um usuário com o mesmo login!");
                 return View(M);

@@ -36,5 +36,17 @@ namespace BusExp2._0.DAL
             }
 
         }
+        public static Motorista MotoristaAleatorio()
+        {
+            int koko = ctx.Motoristas.Max(x => x.MotoristaId);
+            int koko2 = ctx.Motoristas.Min(x => x.MotoristaId);
+            int id = 0;
+            Random r = new Random();
+            id = r.Next(koko2 , koko);
+
+            
+            return ctx.Motoristas.FirstOrDefault(x =>x.MotoristaId == id);
+        }
+        
     }
 }

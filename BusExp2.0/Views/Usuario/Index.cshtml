@@ -8,8 +8,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     Usuario u = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
     Credito c = CreditoDAO.CreditoPorUsuario(u);
-    string aux = ("R$" + c.ValorCredito + "");
+    string aux = "";
 
+    try
+    {
+        aux = ("R$" + c.ValorCredito + "");
+    }
+    catch (NullReferenceException)
+    {
+        aux = ("R$0.00"); ;
+    }
+    
 
 }
 

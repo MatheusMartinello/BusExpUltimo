@@ -47,8 +47,7 @@ namespace BusExp2._0.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "RankingId,ValorAtribuido,Comentario")] Ranking ranking)
         {
-
-            ranking.Motorista = MotoristaDAO.RetornarMotorista()[1];
+            ranking.Motorista = MotoristaDAO.MotoristaAleatorio();
             ranking.Usuario = UsuarioDAO.BuscarUsuarioPorId(Sessao.RetornarUsuario());
             if(RankingDAO.CadastrarRanking(ranking))
                  return RedirectToAction("Index", "Usuario");
